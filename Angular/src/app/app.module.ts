@@ -12,7 +12,6 @@ import { SubjectComponent } from './subject/subject.component';
     AppComponent,
     StudentComponent,
     SubjectComponent,
-    
   ],
   imports: [
     BrowserModule,

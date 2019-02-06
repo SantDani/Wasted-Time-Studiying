@@ -11,7 +11,5 @@ export class StudentService {
 
   constructor() { }
   
-  getHeroes(): Observable<Student[]> {
-    //return of(student);
-  }
+  
 }

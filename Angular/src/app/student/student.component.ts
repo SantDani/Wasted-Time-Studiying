@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
-import { student } from '../student';
-
+import { MockStudent } from '../mock-student'
+import { Student } from '../student';
 
 @Component({
   selector: 'app-student',
@@ -9,13 +9,17 @@ import { student } from '../student';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  Students: student[];
-  constructor(private studentService: StudentService) { }
+  //students = MockStudent;
+  students: Student[];
+   constructor(private studentService: StudentService
+    , private mockStudent: MockStudent
+    ) {
+    this.students = this.mockStudent.getStudents();
+   }
+  
 
-  getStudents(): void{
-    this.Students = this.studentService.getStudents();
-  }
   ngOnInit() {
   }
+
 
 }
