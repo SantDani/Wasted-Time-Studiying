@@ -1,3 +1,12 @@
-<p>
-  student works!
-</p>
+<h3>
+  Student Component View
+</h3>
+<div>
+  <table>
+    <ul class="MockStudent">
+        <li *ngFor="let student of students">
+          {{student.name}} {{student.subjects[0].name }} {{student.subjects[0].difficulty }}
+        </li>   
+    </ul>
+  </table>
+</div>

@@ -1,6 +1,6 @@
-export enum difficulty {Easy, Medium, Hard, RIP}
+export enum Difficulty {Easy = 'Easy', Medium = 'Medium', Hard = 'Hard', RIP = 'RIP'}
 export class Subject{
     id: number;
     name: string;
-    difficulty: difficulty ;
+    difficulty: Difficulty ;
 }
