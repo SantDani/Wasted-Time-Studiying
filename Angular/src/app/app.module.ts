@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
 import { SubjectComponent } from './subject/subject.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { SubjectComponent } from './subject/subject.component';
     AppComponent,
     StudentComponent,
     SubjectComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

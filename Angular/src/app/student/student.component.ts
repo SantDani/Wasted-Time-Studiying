@@ -9,16 +9,20 @@ import { Student } from '../student';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  //students = MockStudent;
+
   students: Student[];
-   constructor(private studentService: StudentService
-    , private mockStudent: MockStudent
-    ) {
-    this.students = this.mockStudent.getStudents();
+
+   constructor(
+     private studentService: StudentService, 
+     private mockStudent: MockStudent) 
+   {
+    
    }
-  
 
   ngOnInit() {
+    this.mockStudent.getStudents().subscribe((s) => {
+      this.students = s;
+    });
   }
 
 
