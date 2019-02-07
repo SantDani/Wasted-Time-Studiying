@@ -4,9 +4,8 @@
 <div>
   <table>
     <ul class="MockStudent">
-        <li *ngFor="let student of students ">
-          {{student.name}} {{student.id}} {{student.subjects[0].id }} {{student.subjects[0].difficulty }}
-          
+        <li *ngFor="let student of students">
+          {{student.name}} {{student.subjects[0].name }} {{student.subjects[0].difficulty }}
         </li>   
     </ul>
   </table>
