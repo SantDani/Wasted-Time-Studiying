@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
-import { MockStudent } from '../mock-student'
 import { Student } from '../student';
 
 @Component({
@@ -13,14 +12,13 @@ export class StudentComponent implements OnInit {
   students: Student[];
 
    constructor(
-     private studentService: StudentService, 
-     private mockStudent: MockStudent) 
+     private studentService: StudentService,) 
    {
     
    }
 
   ngOnInit() {
-    this.mockStudent.getStudents().subscribe((s) => {
+    this.studentService.getStudents().subscribe((s) => {
       this.students = s;
     });
   }
