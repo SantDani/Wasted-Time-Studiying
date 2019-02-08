@@ -4,8 +4,9 @@ import { Student } from '../student';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-const WS_URL = 'http://95.120.95.12:49632/wasted-time-studying/api/' // URL to webapi
-
+//const WS_URL = 'http://95.120.95.12:49632/wasted-time-studying/api/' // URL to webapi
+//const WS_URL = 'http://192.168.1.33:8080/wasted-time-studying/api/' // URL to webapi
+const WS_URL = 'http://localhost:8080/wasted-time-studying/api/' // URL to webapi
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +20,8 @@ export class ClientWSService {
 
   getStudents(): Observable<Student[]> {
     //return of (MockStudent);
-    return this.http.get<Student[]>(WS_URL)
+    const url = WS_URL +  'students/getStudents';
+    return this.http.get<Student[]>(url)
       .pipe(
         catchError(this.handleError('getStudents', []))
       );
@@ -27,7 +29,7 @@ export class ClientWSService {
   
   getStudent(id:number): Observable<Student>{
     const url = '${WS_URL}/students/findBy?idStudent=${id}';
-    return this.http.get<Student>(WS_URL).
+    return this.http.get<Student>(url).
       pipe(
       catchError(this.handleError<Student>(`getStudents id=${id}`))
     );

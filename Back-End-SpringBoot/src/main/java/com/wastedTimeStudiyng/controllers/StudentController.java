@@ -12,7 +12,7 @@ import com.wastedTimeStudiyng.pojos.Student;
 import com.wastedTimeStudiyng.service.StudentService;
 
 @RestController
-@RequestMapping("/wasted-time-studying/api")
+@RequestMapping("/wasted-time-studying/api/students")
 public class StudentController {
 
 	 @Autowired
@@ -22,6 +22,7 @@ public class StudentController {
 	 @GetMapping("/getStudents")
 	 @ResponseBody
 	 private String getStudents(){
+		 System.out.println(" KE MAS VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		 return "connected";
 	 }
 	 

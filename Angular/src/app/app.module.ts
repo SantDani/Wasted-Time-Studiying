@@ -8,6 +8,7 @@ import { SubjectComponent } from './subject/subject.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 // HTTP 
 import { HttpClientModule }    from '@angular/common/http';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule }    from '@angular/common/http';
     StudentComponent,
     SubjectComponent,
     DashboardComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
