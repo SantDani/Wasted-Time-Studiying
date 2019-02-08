@@ -19,7 +19,7 @@ export class ClientWSService {
 
   getStudents(): Observable<Student[]> {
     const url = WS_URL + "students/getStudents";
-    return this.http.get<Student[]>(url, {headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin'})})
+    return this.http.get<Student[]>(url)
       .pipe(
         catchError(this.handleError<Student[]>("GET"))
       );
