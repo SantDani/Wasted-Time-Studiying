@@ -30,7 +30,6 @@ public class StudentDAOImpl implements StudentDAO{
 		cq.select(root);
 		Query<Student> query = session.createQuery(cq);
 
-		session.close();
 		return query.getResultList();
 	}
 

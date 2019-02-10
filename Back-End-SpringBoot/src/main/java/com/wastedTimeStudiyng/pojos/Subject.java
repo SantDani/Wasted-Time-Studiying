@@ -2,12 +2,19 @@ package com.wastedTimeStudiyng.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
+@Table(name="subjects")
 public class Subject {
 
+	/*@Entity
+	@Table(name="difficulty")*/
 	public enum Difficulty{
 		EASY,
 		MEDIUM,
@@ -15,12 +22,18 @@ public class Subject {
 		RIP
 	}
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	private String name;
 	
+	@Enumerated(EnumType.STRING)
 	private Difficulty difficulty;
 	
+	public Subject() {
+	}
+
 	public Subject(int id, String name, Difficulty difficulty) {
 		super();
 		this.id = id;
