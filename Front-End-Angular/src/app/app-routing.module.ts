@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { StudentComponent } from './student/student.component'
-import { DashboardComponent }   from './dashboard/dashboard.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { StudentComponent } from './components/student/student.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

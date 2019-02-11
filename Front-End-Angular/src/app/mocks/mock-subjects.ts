@@ -1,6 +1,6 @@
+import { Difficulty } from '../components/subject/subject';
 import { Injectable } from '@angular/core';
-import { Subject } from './subject';
-import { Difficulty } from './subject'
+import { Subject } from '../components/subject/subject';
 import { Observable, of } from 'rxjs';
 
 @Injectable({

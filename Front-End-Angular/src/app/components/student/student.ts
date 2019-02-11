@@ -1,5 +1,4 @@
-
-import {Subject} from './Subject';
+import {Subject} from '../subject/Subject';
 
 export class Student{
     id: number;
