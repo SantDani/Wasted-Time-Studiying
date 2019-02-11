@@ -24,7 +24,7 @@ public class StudentController {
 	  We could make a copy of the response objects, why? The mutable objects
 	  */
 	 
-	 @GetMapping(value = "/getStudents", produces = MediaType.TEXT_PLAIN_VALUE)
+	 @GetMapping(value = "/getStudents")
 	 private ResponseEntity<List<Student>> getStudents() {
 		 
 		 List<Student> response = this.studentService.getStudents();
@@ -32,5 +32,5 @@ public class StudentController {
 		 return response == null ? new ResponseEntity<>(HttpStatus.NO_CONTENT) :
 				 				new ResponseEntity<List<Student>>(response, HttpStatus.OK);
 	 }
-	
+	        
 }

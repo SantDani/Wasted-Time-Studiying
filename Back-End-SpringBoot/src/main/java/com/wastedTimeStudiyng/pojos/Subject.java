@@ -7,6 +7,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,16 +33,21 @@ public class Subject {
 	@Enumerated(EnumType.STRING)
 	private Difficulty difficulty;
 	
+	@ManyToOne
+	@JoinColumn(name="id_student")
+	private Student student;
+	
 	public Subject() {
 	}
-
-	public Subject(int id, String name, Difficulty difficulty) {
+	
+	public Subject(int id, String name, Difficulty difficulty, Student student) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.difficulty = difficulty;
+		this.student = student;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

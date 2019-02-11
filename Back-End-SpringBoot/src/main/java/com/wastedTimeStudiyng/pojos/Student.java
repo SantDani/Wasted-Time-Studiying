@@ -22,7 +22,7 @@ public class Student {
 	
 	private String name;
 	
-	@OneToMany(targetEntity=Subject.class, fetch=FetchType.EAGER)
+	@OneToMany(targetEntity=Subject.class, mappedBy="student", fetch=FetchType.EAGER)
 	private List<Subject> subjectList = new ArrayList<Subject>();
 	
 	public Student() {
