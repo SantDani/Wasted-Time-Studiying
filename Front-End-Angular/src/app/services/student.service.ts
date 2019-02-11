@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
-import { Student } from './student';
-import { ClientWSService } from './clientWS/client-ws.service'
+import { Student } from '../components/student/student';
+import { ClientWSService } from '../webservice/clientWS/client-ws.service'
 
 
 @Injectable({
