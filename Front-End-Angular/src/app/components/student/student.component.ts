@@ -10,7 +10,6 @@ import { Student } from './student';
 export class StudentComponent implements OnInit {
 
   students: Student[];
-  name: String;
 
    constructor(
      private studentService: StudentService,) 
