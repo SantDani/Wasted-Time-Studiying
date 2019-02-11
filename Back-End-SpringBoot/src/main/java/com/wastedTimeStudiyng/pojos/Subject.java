@@ -1,6 +1,5 @@
 package com.wastedTimeStudiyng.pojos;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,8 +14,6 @@ import javax.persistence.Table;
 @Table(name="subjects")
 public class Subject {
 
-	/*@Entity
-	@Table(name="difficulty")*/
 	public enum Difficulty{
 		EASY,
 		MEDIUM,

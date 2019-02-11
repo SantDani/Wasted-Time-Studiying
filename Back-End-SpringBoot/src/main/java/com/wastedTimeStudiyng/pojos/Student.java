@@ -3,7 +3,6 @@ package com.wastedTimeStudiyng.pojos;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,6 +20,8 @@ public class Student {
 	private int id;
 	
 	private String name;
+	private String dni;
+	private String email;
 	
 	@OneToMany(targetEntity=Subject.class, mappedBy="student", fetch=FetchType.EAGER)
 	private List<Subject> subjectList = new ArrayList<Subject>();
@@ -28,10 +29,12 @@ public class Student {
 	public Student() {
 	}
 
-	public Student(int id, String name, List<Subject> subjectList) {
+	public Student(int id, String name, String dni, String email, List<Subject> subjectList) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.dni = dni;
+		this.email = email;
 		this.subjectList = subjectList;
 	}
 
@@ -57,6 +60,22 @@ public class Student {
 	
 	public void setSubjectList(List<Subject> subjectList) {
 		this.subjectList = subjectList;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }

@@ -17,13 +17,39 @@ public class StudentServiceImpl implements StudentService {
 	private StudentDAO studentDao;
 	
 	@Transactional(readOnly = true)
+	@Override
 	public List<Student> getStudents() {
 		return this.studentDao.getStudents();
 	}
 	
 	@Transactional(readOnly = true)
-	public Student getStudent(int id) {
-		return this.studentDao.getStudent(id);
+	@Override
+	public Student getStudentById(int id) {
+		return this.studentDao.getStudentById(id);
+	}
+
+	@Transactional
+	@Override
+	public void createStudent(Student student) {
+		this.studentDao.createStudent(student);
+	}
+
+	@Transactional
+	@Override
+	public void updateStudent(String dni, Student student) {
+		this.studentDao.updateStudent(dni, student);
+	}
+
+	@Transactional
+	@Override
+	public void deleteStudent(String dni) {
+		this.studentDao.deleteStudent(dni);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public Student getStudentByDni(String dni) {
+		return this.studentDao.getStudentByDni(dni);
 	}
 
 }

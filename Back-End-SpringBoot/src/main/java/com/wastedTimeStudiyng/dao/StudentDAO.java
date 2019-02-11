@@ -8,6 +8,12 @@ public interface StudentDAO {
 	
 	//Basic CRUD
 	public List<Student> getStudents();
-	public Student getStudent(int id);
+	public Student getStudentById(int id);
+	public void createStudent(Student student);
+	public void updateStudent(String dni, Student student);
+	public void deleteStudent(String dni);
+	
+	//Other methods
+	public Student getStudentByDni(String dni);
 
 }
