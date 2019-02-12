@@ -4,4 +4,5 @@ export class Student{
     id: number;
     name: string;
     subjectList?: Subject[];
+    dni: string;
 }

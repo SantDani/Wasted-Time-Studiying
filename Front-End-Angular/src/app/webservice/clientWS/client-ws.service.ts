@@ -60,9 +60,9 @@ export class ClientWSService {
     );
   }
 
-  deleteStudent(dni:String): Observable<Student>{
-    const url = WS_URL + "students/deleteStudent?dni=" + dni;
-    return this.http.delete<Student>(url).
+  deleteStudent(dni:String): Observable<{}>{
+    const url = WS_URL + "students/deleteStudent/" + dni;
+    return this.http.delete(url).
       pipe(
       catchError(this.handleError<Student>(TypeCall.DELETE))
     );

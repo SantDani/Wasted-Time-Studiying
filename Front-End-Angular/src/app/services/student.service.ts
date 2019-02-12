@@ -16,5 +16,9 @@ export class StudentService {
   public getStudents(): Observable<Student[]> {
     return this.clientWSService.getStudents();
   }
+
+  public deleteStudent(dni: String): void {
+    this.clientWSService.deleteStudent(dni);
+  }
   
 }

@@ -1,6 +1,5 @@
 import {StudentComponent} from './components/student/student.component';
 import {SubjectComponent} from './components/subject/subject.component';
-import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
@@ -14,7 +13,6 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     StudentComponent,
     SubjectComponent,
-    DashboardComponent,
   ],
   imports: [
     BrowserModule,

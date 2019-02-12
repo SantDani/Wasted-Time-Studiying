@@ -3,10 +3,12 @@
 </h3>
 <div>
   <table>
-    <ul class="MockStudent">
+    <ul>
         <li *ngFor="let student of students">
           {{student.name}} {{student.subjectList[0].name }} {{student.subjectList[0].difficulty }}
         </li>   
     </ul>
   </table>
+  <button (click)="addStudent()">Add Student</button>
+  <button *ngFor="let student of students" (click)="deleteStudent(student)">Delete {{student.name}}</button>
 </div>

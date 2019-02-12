@@ -23,5 +23,13 @@ export class StudentComponent implements OnInit {
     });
   }
 
+  public deleteStudent(student: Student): void{
+    this.studentService.deleteStudent(student.dni);
+    console.log("delete Student");
+  }
+
+  public addStudent(): void{
+    console.log("add Student");
+  }
 
 }
