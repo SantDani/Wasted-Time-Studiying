@@ -17,8 +17,12 @@ export class StudentService {
     return this.clientWSService.getStudents();
   }
 
+  public getStudentById(id : number): Observable<Student>{
+    return this.clientWSService.getStudentById(id);
+  }
+
   public deleteStudent(dni: String): void {
-    this.clientWSService.deleteStudent(dni);
+    this.clientWSService.deleteStudent(dni).subscribe();
   }
   
 }

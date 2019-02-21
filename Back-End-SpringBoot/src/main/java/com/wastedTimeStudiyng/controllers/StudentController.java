@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wastedTimeStudiyng.pojos.Student;
@@ -38,7 +39,7 @@ public class StudentController {
 	}
 
 	@GetMapping(value = "/getStudentById/{idStudent}")
-	private ResponseEntity<Student> getStudentById(@PathVariable("idStudent") int idStudent) {
+	private ResponseEntity<Student> getStudentById(@RequestParam("idStudent") int idStudent) {
 
 		Student response = this.studentService.getStudentById(idStudent);
 
@@ -51,7 +52,7 @@ public class StudentController {
 
 		this.studentService.updateStudent(dni, student);
 
-		return ResponseEntity.ok().body("Student has been updated succesfully");
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/createStudent")
@@ -59,13 +60,13 @@ public class StudentController {
 
 		this.studentService.createStudent(student);
 
-		return ResponseEntity.ok().body("Student has been created succesfully");
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	@DeleteMapping("/deleteStudent/{dni}")
 	public ResponseEntity<?> deleteStudent(@PathVariable("dni") String dni) {
 		this.studentService.deleteStudent(dni);
-		return ResponseEntity.ok().body("Student has been deleted successfully.");
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 }

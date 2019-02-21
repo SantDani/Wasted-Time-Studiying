@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../services/student.service';
 import { Student } from './student';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-student',
@@ -26,6 +27,14 @@ export class StudentComponent implements OnInit {
   public deleteStudent(student: Student): void{
     this.studentService.deleteStudent(student.dni);
     console.log("delete Student");
+  }
+
+  public getStudentById(id : number): void{
+    console.log("Get student by id");
+    this.studentService.getStudentById(id).subscribe(student => {
+        console.log("The current student is " + student.name + " with DNI: " + student.dni
+        )}
+      );
   }
 
   public addStudent(): void{

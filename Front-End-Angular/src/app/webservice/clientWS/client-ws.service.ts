@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Student } from '../../components/student/student';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Type } from '@angular/compiler';
 
 const WS_URL = 'http://localhost:8080/wasted-time-studying/api/' // URL to webapi
 

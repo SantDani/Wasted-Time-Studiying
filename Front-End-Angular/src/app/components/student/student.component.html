@@ -10,5 +10,6 @@
     </ul>
   </table>
   <button (click)="addStudent()">Add Student</button>
+  <button (click)="getStudentById(1)">Get Student By Id</button>
   <button *ngFor="let student of students" (click)="deleteStudent(student)">Delete {{student.name}}</button>
 </div>
